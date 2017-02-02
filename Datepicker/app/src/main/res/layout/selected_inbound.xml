@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/backgrnd"
+    android:id="@+id/selected_inbound">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select InBound Date"
+        android:textSize="20dp"
+        android:shadowRadius="10"
+        android:shadowColor="@android:color/black"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:id="@+id/textViewin"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentStart="true" />
+
+    <DatePicker
+        android:layout_width="match_parent"
+        android:layout_height="360dp"
+        android:id="@+id/datePickerin"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:headerBackground="#0a0d9f"
+        android:yearListSelectorColor="#0a0d9f"
+        android:layout_weight="0.44" />
+
+    <Button
+        android:text="Next"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="10dp"
+        android:background="#0a0d9f"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:id="@+id/button2" />
+
+</LinearLayout>

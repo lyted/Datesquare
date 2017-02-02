@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/display_dates"
+    android:background="@drawable/backgrnd">
+
+
+    <TextView
+        android:text="Selected OutBound Date:"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:shadowRadius="5"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowColor="@android:color/black"
+        android:layout_margin="10dp"/>
+
+    <TextView
+        android:text="."
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:textSize="40dp"
+        android:shadowColor="@android:color/black"
+        android:shadowDy="1"
+        android:shadowDx="1"
+        android:shadowRadius="10"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:id="@+id/textView2" />
+
+    <TextView
+        android:text="Selected InBound Date:"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:shadowRadius="5"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowColor="@android:color/black"
+        android:layout_margin="10dp"/>
+
+    <TextView
+        android:text="."
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:textSize="40dp"
+        android:shadowColor="@android:color/black"
+        android:shadowDy="1"
+        android:shadowDx="1"
+        android:shadowRadius="10"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:id="@+id/textView3" />
+</LinearLayout>
