@@ -124,7 +124,7 @@ public class CalendarPickerView extends ListView {
     dayTextColorResId = a.getResourceId(R.styleable.CalendarPickerView_tsquare_dayTextColor,
         R.color.calendar_text_selector);
     titleTextColor = a.getColor(R.styleable.CalendarPickerView_tsquare_titleTextColor,
-        res.getColor(R.color.calendar_text_active));
+        res.getColor(R.color.calendar_titletext_active));
     displayHeader = a.getBoolean(R.styleable.CalendarPickerView_tsquare_displayHeader, true);
     headerTextColor = a.getColor(R.styleable.CalendarPickerView_tsquare_headerTextColor,
         res.getColor(R.color.calendar_text_active));
@@ -642,16 +642,25 @@ public class CalendarPickerView extends ListView {
         if (selectedCals.size() > 1) {
           // We've already got a range selected: clear the old one.
           clearOldSelections();
-        } else if (selectedCals.size() == 1 && newlySelectedCal.before(selectedCals.get(0))) {
+        }
+        else if (selectedCals.size() == 1 && newlySelectedCal.before(selectedCals.get(0))) {
 
-          // if((newlySelectedCal.getTimeInMillis() - selectedCals.get(0).getTimeInMillis()) <= 86400000){
-           //end = newlySelectedCal.getTime();
-           //}
-          //else if((newlySelectedCal.getTimeInMillis() - selectedCals.get(0).getTimeInMillis()) <= -86400000 ){
-           //start = newlySelectedCal.getTime();
-           //}
-          // We're moving the start of the range back in time: clear the old start date.
-          clearOldSelections();
+          start = newlySelectedCal.getTime();
+          end = selectedCals.get(0).getTime();
+
+         // if ((newlySelectedCal.getTimeInMillis() - selectedCals.get(0).getTimeInMillis()) >= -86400000) {
+         //   start = newlySelectedCal.getTime();
+          //}
+
+        }
+        else if (selectedCals.size() == 1 && newlySelectedCal.after(selectedCals.get(0))) {
+
+          start = selectedCals.get(0).getTime();
+          end = newlySelectedCal.getTime();
+
+          //if ((newlySelectedCal.getTimeInMillis() - selectedCals.get(0).getTimeInMillis()) <= 86400000) {
+          //  end = newlySelectedCal.getTime();
+         // }
         }
         break;
 
@@ -676,8 +685,8 @@ public class CalendarPickerView extends ListView {
 
       if (selectionMode == SelectionMode.RANGE && selectedCells.size() > 1) {
         // Select all days in between start and end.
-        start = selectedCells.get(0).getDate();
-        end = selectedCells.get(1).getDate();
+        //start = selectedCells.get(0).getDate();
+        //end = selectedCells.get(1).getDate();
         selectedCells.get(0).setRangeState(MonthCellDescriptor.RangeState.FIRST);
         selectedCells.get(1).setRangeState(MonthCellDescriptor.RangeState.LAST);
 

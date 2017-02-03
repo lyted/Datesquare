@@ -1,26 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="http://schemas.android.com/tools">
-    <color name="calendar_active_month_bg">#fff5f7f9</color>
-    <color name="calendar_bg">#ffffffff</color>
-    <color name="calendar_divider">#ffbababa</color>
-    <color name="calendar_highlighted_day_bg">#ccffcc</color>
-    <color name="calendar_inactive_month_bg">#ffd7d9db</color>
-    <color name="calendar_selected_day_bg">#ce1e38</color>
-    <color name="calendar_selected_range_bg">#bbce1e38</color>
-    <color name="calendar_text_active">#ff778088</color>
-    <color name="calendar_text_highlighted">#ff778088</color>
-    <color name="calendar_text_inactive">#40778088</color>
+    <color name="calendar_active_month_bg">#00d7d9db</color>
+    <color name="calendar_bg">#bbe0e5ec</color>
+    <color name="calendar_divider">#00ffffff</color>
+    <color name="calendar_highlighted_day_bg">#ccfcff</color>
+    <color name="calendar_inactive_month_bg">#00d7d9db</color>
+    <color name="calendar_selected_day_bg">#b9f5082b</color>
+    <color name="calendar_selected_range_bg">#98f5082b</color>
+    <color name="calendar_text_active">#3b4661</color>
+    <color name="calendar_text_highlighted">#fcfafd</color>
+    <color name="calendar_text_inactive">#00eff1f4</color>
     <color name="calendar_text_selected">#ffffffff</color>
     <color name="calendar_text_unselectable">#7f778088</color>
+    <color name="calendar_titletext_active">#3b4661</color>
+    <color name="calendar_today">#9292d1f2</color>
     <declare-styleable name="CalendarPickerView"><attr name="android:background"/><attr format="color" name="tsquare_dividerColor"/><attr format="reference" name="tsquare_dayBackground"/><attr format="color" name="tsquare_dayTextColor"/><attr format="color" name="tsquare_titleTextColor"/><attr format="boolean" name="tsquare_displayHeader"/><attr format="color" name="tsquare_headerTextColor"/></declare-styleable>
     <declare-styleable name="calendar_cell"><attr format="boolean" name="tsquare_state_selectable"/><attr format="boolean" name="tsquare_state_current_month"/><attr format="boolean" name="tsquare_state_today"/><attr format="boolean" name="tsquare_state_range_first"/><attr format="boolean" name="tsquare_state_range_middle"/><attr format="boolean" name="tsquare_state_range_last"/><attr format="boolean" name="tsquare_state_highlighted"/></declare-styleable>
     <dimen name="calendar_day_headers_paddingbottom">4dp</dimen>
-    <dimen name="calendar_month_title_bottommargin">4dp</dimen>
-    <dimen name="calendar_month_topmargin">16dp</dimen>
-    <dimen name="calendar_text_medium">18sp</dimen>
-    <dimen name="calendar_text_small">14sp</dimen>
+    <dimen name="calendar_month_title_bottommargin">20dp</dimen>
+    <dimen name="calendar_month_topmargin">20dp</dimen>
+    <dimen name="calendar_text_medium">20sp</dimen>
+    <dimen name="calendar_text_month">22sp</dimen>
+    <dimen name="calendar_text_small">1sp</dimen>
     <item name="day_view_adapter_class" type="id"/>
-    <string name="day_name_format">EEE</string>
+    <string name="day_name_format"/>
     <string name="invalid_date">Date must be between %1$s and %2$s.</string>
     <string name="month_name_format">MMMM yyyy</string>
     <style name="CalendarCell">
@@ -37,7 +40,7 @@
     <item name="android:textSize">@dimen/calendar_text_small</item>
   </style>
     <style name="CalendarTitle">
-    <item name="android:textSize">@dimen/calendar_text_medium</item>
+    <item name="android:textSize">@dimen/calendar_text_month</item>
     <item name="android:textStyle">bold</item>
   </style>
 </resources>

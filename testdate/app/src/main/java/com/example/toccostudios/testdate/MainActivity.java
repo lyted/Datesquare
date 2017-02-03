@@ -55,11 +55,11 @@ public class MainActivity extends AppCompatActivity {
         but.setAlpha(0.5f);
         reset = (Button) findViewById(R.id.reset);
         reset.setEnabled(false);
-        reset.setAlpha(0.5f);
+        reset.setVisibility(View.INVISIBLE);
 
-        View backgroundImage = findViewById(R.id.activity_main);
-        Drawable background = backgroundImage.getBackground();
-        background.setAlpha(70);
+        //View backgroundImage = findViewById(R.id.activity_main);
+        //Drawable background = backgroundImage.getBackground();
+        //background.setAlpha(70);
 
 
         today.add(Calendar.DATE,7);
@@ -82,9 +82,10 @@ public class MainActivity extends AppCompatActivity {
                     tempout = sdfout.format(start);
                     //Log.e("date printed", tempout);
                     outbound.setText(tempout);
+                    outbound.setVisibility(View.VISIBLE);
                     firstset = false;
                     reset.setEnabled(true);
-                    reset.setAlpha(1.0f);
+                    reset.setVisibility(View.VISIBLE);
                 }
 
                 else{
@@ -92,11 +93,12 @@ public class MainActivity extends AppCompatActivity {
                     Date compare = date;
 
                     if (inboundset == false) {
-                        if (date.compareTo(start) >= 0) {
+                        if (compare.compareTo(start) >= 0) {
                             end = compare;
                             tempin = sdfout.format(end);
                             //Log.e("date printed", tempin);
                             inbound.setText(tempin);
+                            inbound.setVisibility(View.VISIBLE);
                             inboundset = true;
 
                             if(!passenabled){
@@ -107,19 +109,25 @@ public class MainActivity extends AppCompatActivity {
                         }
 
                         else{
+
+                            end = start;
                             start = compare;
                             tempout = sdfout.format(start);
+                            tempin = sdfout.format(end);
                             outbound.setText(tempout);
-                            inbound.setText("INBOUND");
+                            inbound.setText(tempin);
+                            inbound.setVisibility(View.VISIBLE);
+                            inboundset = true;
                         }
 
                     }
-                        //inbound date not set, inboundset = true.
+                        //inbound date set, inboundset = true.
                     else {
                         start = compare;
                         tempout = sdfout.format(start);
                         outbound.setText(tempout);
                         inbound.setText("INBOUND");
+                        inbound.setVisibility(View.INVISIBLE);
                         inboundset = false;
                     }
 
@@ -136,26 +144,20 @@ public class MainActivity extends AppCompatActivity {
         reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                calendarPickerView.clearOldSelections();
+                calendarPickerView.init(tod,nextYear.getTime()).inMode(CalendarPickerView.SelectionMode.RANGE).withSelectedDates(range);
+                //calendarPickerView.clearOldSelections();
                 firstset = true;
                 inboundset = false;
                 passenabled = false;
                 inbound.setText("INBOUND");
+                inbound.setVisibility(View.INVISIBLE);
                 outbound.setText("OUTBOUND");
-                reset.setAlpha(0.5f);
+                outbound.setVisibility(View.INVISIBLE);
+                reset.setVisibility(View.INVISIBLE);
                 reset.setEnabled(false);
                 but.setAlpha(0.5f);
                 but.setEnabled(false);
-                //start = null;
-                //start = null;
 
-//                dataManager.selectedOutBoundDate = start;
-//                tempout = sdfout.format(start);
-//                Log.e("Data Manager OutBound: ", tempout);
-//
-//                dataManager.selectedInBoundDate = end;
-//                tempin = sdfout.format(end);
-//                Log.e("Data Manager Inbound: ", tempin);
             }
         });
 

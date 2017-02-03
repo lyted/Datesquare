@@ -126,15 +126,18 @@ containing a value of this type.
         public static final int calendar_text_highlighted=0x7f050008;
         public static final int calendar_text_inactive=0x7f050009;
         public static final int calendar_text_selected=0x7f05000a;
-        public static final int calendar_text_selector=0x7f05000c;
+        public static final int calendar_text_selector=0x7f05000e;
         public static final int calendar_text_unselectable=0x7f05000b;
+        public static final int calendar_titletext_active=0x7f05000c;
+        public static final int calendar_today=0x7f05000d;
     }
     public static final class dimen {
         public static final int calendar_day_headers_paddingbottom=0x7f060000;
         public static final int calendar_month_title_bottommargin=0x7f060001;
         public static final int calendar_month_topmargin=0x7f060002;
         public static final int calendar_text_medium=0x7f060003;
-        public static final int calendar_text_small=0x7f060004;
+        public static final int calendar_text_month=0x7f060004;
+        public static final int calendar_text_small=0x7f060005;
     }
     public static final class drawable {
         public static final int calendar_bg_selector=0x7f020000;
