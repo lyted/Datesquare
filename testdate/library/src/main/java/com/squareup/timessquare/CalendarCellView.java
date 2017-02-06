@@ -30,6 +30,9 @@ public class CalendarCellView extends FrameLayout {
   private static final int[] STATE_RANGE_LAST = {
       R.attr.tsquare_state_range_last
   };
+  private static final int[] STATE_RANGE_SAME = {
+          R.attr.tsquare_state_range_same
+  };
 
   private boolean isSelectable = false;
   private boolean isCurrentMonth = false;
@@ -49,6 +52,13 @@ public class CalendarCellView extends FrameLayout {
       refreshDrawableState();
     }
   }
+
+//  public void setendSelectable(boolean isSelectable) {
+//    if (this.isSelectable != isSelectable) {
+//      this.isSelectable = isSelectable;
+//      refreshDrawableState();
+//    }
+//}
 
   public void setCurrentMonth(boolean isCurrentMonth) {
     if (this.isCurrentMonth != isCurrentMonth) {
@@ -102,6 +112,9 @@ public class CalendarCellView extends FrameLayout {
     final int[] drawableState = super.onCreateDrawableState(extraSpace + 5);
 
     if (isSelectable) {
+     // if(rangeState == RangeState.LAST){
+      //  mergeDrawableStates(drawableState, STATE_RANGE_LAST);
+     // }
       mergeDrawableStates(drawableState, STATE_SELECTABLE);
     }
 
@@ -119,12 +132,17 @@ public class CalendarCellView extends FrameLayout {
 
     if (rangeState == MonthCellDescriptor.RangeState.FIRST) {
       mergeDrawableStates(drawableState, STATE_RANGE_FIRST);
-    } else if (rangeState == MonthCellDescriptor.RangeState.MIDDLE) {
+    }
+    else if (rangeState == MonthCellDescriptor.RangeState.MIDDLE) {
       mergeDrawableStates(drawableState, STATE_RANGE_MIDDLE);
-    } else if (rangeState == RangeState.LAST) {
+    }
+    else if (rangeState == RangeState.LAST) {
       mergeDrawableStates(drawableState, STATE_RANGE_LAST);
     }
+    else if (rangeState == RangeState.SAME) {
+        mergeDrawableStates(drawableState, STATE_RANGE_SAME);
 
+      }
     return drawableState;
   }
 

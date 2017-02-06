@@ -55,7 +55,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int tsquare_state_current_month=0x7f010007;
+        public static int tsquare_state_current_month=0x7f010008;
         /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -63,7 +63,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int tsquare_state_highlighted=0x7f01000c;
+        public static int tsquare_state_highlighted=0x7f01000d;
         /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -71,7 +71,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int tsquare_state_range_first=0x7f010009;
+        public static int tsquare_state_range_first=0x7f01000a;
         /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -79,7 +79,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int tsquare_state_range_last=0x7f01000b;
+        public static int tsquare_state_range_last=0x7f01000c;
         /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -87,7 +87,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int tsquare_state_range_middle=0x7f01000a;
+        public static int tsquare_state_range_middle=0x7f01000b;
         /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -103,7 +103,15 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int tsquare_state_today=0x7f010008;
+        public static int tsquare_state_selectable_end=0x7f010007;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static int tsquare_state_today=0x7f010009;
         /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
 <p>This may also be a reference to a resource (in the form
@@ -140,7 +148,12 @@ containing a value of this type.
         public static int calendar_text_small=0x7f060005;
     }
     public static final class drawable {
-        public static int calendar_bg_selector=0x7f020000;
+        public static int border=0x7f020000;
+        public static int calendar_bg_selector=0x7f020001;
+        public static int circle=0x7f020002;
+        public static int innerrange=0x7f020003;
+        public static int innerselectedend=0x7f020004;
+        public static int innerselectedstart=0x7f020005;
     }
     public static final class id {
         public static int calendar_grid=0x7f070002;
@@ -291,6 +304,7 @@ containing a value of this type.
            <tr><td><code>{@link #calendar_cell_tsquare_state_range_last com.squareup.timessquare:tsquare_state_range_last}</code></td><td></td></tr>
            <tr><td><code>{@link #calendar_cell_tsquare_state_range_middle com.squareup.timessquare:tsquare_state_range_middle}</code></td><td></td></tr>
            <tr><td><code>{@link #calendar_cell_tsquare_state_selectable com.squareup.timessquare:tsquare_state_selectable}</code></td><td></td></tr>
+           <tr><td><code>{@link #calendar_cell_tsquare_state_selectable_end com.squareup.timessquare:tsquare_state_selectable_end}</code></td><td></td></tr>
            <tr><td><code>{@link #calendar_cell_tsquare_state_today com.squareup.timessquare:tsquare_state_today}</code></td><td></td></tr>
            </table>
            @see #calendar_cell_tsquare_state_current_month
@@ -299,11 +313,12 @@ containing a value of this type.
            @see #calendar_cell_tsquare_state_range_last
            @see #calendar_cell_tsquare_state_range_middle
            @see #calendar_cell_tsquare_state_selectable
+           @see #calendar_cell_tsquare_state_selectable_end
            @see #calendar_cell_tsquare_state_today
          */
         public static final int[] calendar_cell = {
             0x7f010006, 0x7f010007, 0x7f010008, 0x7f010009,
-            0x7f01000a, 0x7f01000b, 0x7f01000c
+            0x7f01000a, 0x7f01000b, 0x7f01000c, 0x7f01000d
         };
         /**
           <p>This symbol is the offset where the {@link com.squareup.timessquare.R.attr#tsquare_state_current_month}
@@ -318,7 +333,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.squareup.timessquare:tsquare_state_current_month
         */
-        public static int calendar_cell_tsquare_state_current_month = 1;
+        public static int calendar_cell_tsquare_state_current_month = 2;
         /**
           <p>This symbol is the offset where the {@link com.squareup.timessquare.R.attr#tsquare_state_highlighted}
           attribute's value can be found in the {@link #calendar_cell} array.
@@ -332,7 +347,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.squareup.timessquare:tsquare_state_highlighted
         */
-        public static int calendar_cell_tsquare_state_highlighted = 6;
+        public static int calendar_cell_tsquare_state_highlighted = 7;
         /**
           <p>This symbol is the offset where the {@link com.squareup.timessquare.R.attr#tsquare_state_range_first}
           attribute's value can be found in the {@link #calendar_cell} array.
@@ -346,7 +361,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.squareup.timessquare:tsquare_state_range_first
         */
-        public static int calendar_cell_tsquare_state_range_first = 3;
+        public static int calendar_cell_tsquare_state_range_first = 4;
         /**
           <p>This symbol is the offset where the {@link com.squareup.timessquare.R.attr#tsquare_state_range_last}
           attribute's value can be found in the {@link #calendar_cell} array.
@@ -360,7 +375,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.squareup.timessquare:tsquare_state_range_last
         */
-        public static int calendar_cell_tsquare_state_range_last = 5;
+        public static int calendar_cell_tsquare_state_range_last = 6;
         /**
           <p>This symbol is the offset where the {@link com.squareup.timessquare.R.attr#tsquare_state_range_middle}
           attribute's value can be found in the {@link #calendar_cell} array.
@@ -374,7 +389,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.squareup.timessquare:tsquare_state_range_middle
         */
-        public static int calendar_cell_tsquare_state_range_middle = 4;
+        public static int calendar_cell_tsquare_state_range_middle = 5;
         /**
           <p>This symbol is the offset where the {@link com.squareup.timessquare.R.attr#tsquare_state_selectable}
           attribute's value can be found in the {@link #calendar_cell} array.
@@ -390,6 +405,20 @@ containing a value of this type.
         */
         public static int calendar_cell_tsquare_state_selectable = 0;
         /**
+          <p>This symbol is the offset where the {@link com.squareup.timessquare.R.attr#tsquare_state_selectable_end}
+          attribute's value can be found in the {@link #calendar_cell} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.squareup.timessquare:tsquare_state_selectable_end
+        */
+        public static int calendar_cell_tsquare_state_selectable_end = 1;
+        /**
           <p>This symbol is the offset where the {@link com.squareup.timessquare.R.attr#tsquare_state_today}
           attribute's value can be found in the {@link #calendar_cell} array.
 
@@ -402,6 +431,6 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.squareup.timessquare:tsquare_state_today
         */
-        public static int calendar_cell_tsquare_state_today = 2;
+        public static int calendar_cell_tsquare_state_today = 3;
     };
 }

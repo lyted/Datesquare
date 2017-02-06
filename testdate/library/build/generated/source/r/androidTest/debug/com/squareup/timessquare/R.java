@@ -13,13 +13,14 @@ public final class R {
 		public static final int tsquare_displayHeader = 0x7f010004;
 		public static final int tsquare_dividerColor = 0x7f010000;
 		public static final int tsquare_headerTextColor = 0x7f010005;
-		public static final int tsquare_state_current_month = 0x7f010007;
-		public static final int tsquare_state_highlighted = 0x7f01000c;
-		public static final int tsquare_state_range_first = 0x7f010009;
-		public static final int tsquare_state_range_last = 0x7f01000b;
-		public static final int tsquare_state_range_middle = 0x7f01000a;
+		public static final int tsquare_state_current_month = 0x7f010008;
+		public static final int tsquare_state_highlighted = 0x7f01000d;
+		public static final int tsquare_state_range_first = 0x7f01000a;
+		public static final int tsquare_state_range_last = 0x7f01000c;
+		public static final int tsquare_state_range_middle = 0x7f01000b;
 		public static final int tsquare_state_selectable = 0x7f010006;
-		public static final int tsquare_state_today = 0x7f010008;
+		public static final int tsquare_state_selectable_end = 0x7f010007;
+		public static final int tsquare_state_today = 0x7f010009;
 		public static final int tsquare_titleTextColor = 0x7f010003;
 	}
 	public static final class color {
@@ -48,7 +49,12 @@ public final class R {
 		public static final int calendar_text_small = 0x7f060005;
 	}
 	public static final class drawable {
-		public static final int calendar_bg_selector = 0x7f020000;
+		public static final int border = 0x7f020000;
+		public static final int calendar_bg_selector = 0x7f020001;
+		public static final int circle = 0x7f020002;
+		public static final int innerrange = 0x7f020003;
+		public static final int innerselectedend = 0x7f020004;
+		public static final int innerselectedstart = 0x7f020005;
 	}
 	public static final class id {
 		public static final int calendar_grid = 0x7f070002;
@@ -79,13 +85,14 @@ public final class R {
 		public static final int CalendarPickerView_tsquare_dividerColor = 1;
 		public static final int CalendarPickerView_tsquare_headerTextColor = 6;
 		public static final int CalendarPickerView_tsquare_titleTextColor = 4;
-		public static final int[] calendar_cell = { 0x7f010006, 0x7f010007, 0x7f010008, 0x7f010009, 0x7f01000a, 0x7f01000b, 0x7f01000c };
-		public static final int calendar_cell_tsquare_state_current_month = 1;
-		public static final int calendar_cell_tsquare_state_highlighted = 6;
-		public static final int calendar_cell_tsquare_state_range_first = 3;
-		public static final int calendar_cell_tsquare_state_range_last = 5;
-		public static final int calendar_cell_tsquare_state_range_middle = 4;
+		public static final int[] calendar_cell = { 0x7f010006, 0x7f010007, 0x7f010008, 0x7f010009, 0x7f01000a, 0x7f01000b, 0x7f01000c, 0x7f01000d };
+		public static final int calendar_cell_tsquare_state_current_month = 2;
+		public static final int calendar_cell_tsquare_state_highlighted = 7;
+		public static final int calendar_cell_tsquare_state_range_first = 4;
+		public static final int calendar_cell_tsquare_state_range_last = 6;
+		public static final int calendar_cell_tsquare_state_range_middle = 5;
 		public static final int calendar_cell_tsquare_state_selectable = 0;
-		public static final int calendar_cell_tsquare_state_today = 2;
+		public static final int calendar_cell_tsquare_state_selectable_end = 1;
+		public static final int calendar_cell_tsquare_state_today = 3;
 	}
 }

@@ -8,10 +8,10 @@ import java.util.Date;
 /** Describes the state of a particular date cell in a {@link MonthView}. */
 class MonthCellDescriptor {
   public enum RangeState {
-    NONE, FIRST, MIDDLE, LAST
+    NONE, FIRST, MIDDLE, LAST, SAME
   }
 
-  private final Date date;
+  private  Date date;
   private final int value;
   private final boolean isCurrentMonth;
   private boolean isSelected;
@@ -51,6 +51,8 @@ class MonthCellDescriptor {
   public void setSelected(boolean selected) {
     isSelected = selected;
   }
+
+  public void setDate(Date date){ this.date = date; }
 
   boolean isHighlighted() {
     return isHighlighted;

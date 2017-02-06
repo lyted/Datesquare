@@ -78,6 +78,8 @@ public class CalendarPickerView extends ListView {
   private Calendar maxCal;
   private Calendar monthCounter;
   private boolean displayOnly;
+  public boolean rangechange = false;
+  public boolean oneday = true;
   SelectionMode selectionMode;
   Calendar today;
   private int dividerColor;
@@ -647,20 +649,22 @@ public class CalendarPickerView extends ListView {
 
           start = newlySelectedCal.getTime();
           end = selectedCals.get(0).getTime();
-
-         // if ((newlySelectedCal.getTimeInMillis() - selectedCals.get(0).getTimeInMillis()) >= -86400000) {
-         //   start = newlySelectedCal.getTime();
-          //}
+          rangechange = true;
+          oneday = false;
 
         }
         else if (selectedCals.size() == 1 && newlySelectedCal.after(selectedCals.get(0))) {
 
           start = selectedCals.get(0).getTime();
           end = newlySelectedCal.getTime();
+          rangechange = false;
+          oneday = false;
+        }
 
-          //if ((newlySelectedCal.getTimeInMillis() - selectedCals.get(0).getTimeInMillis()) <= 86400000) {
-          //  end = newlySelectedCal.getTime();
-         // }
+        else if(selectedCals.size() == 1 && newlySelectedCal.equals(selectedCals.get(0)))
+        {
+          oneday = true;
+
         }
         break;
 
@@ -687,8 +691,26 @@ public class CalendarPickerView extends ListView {
         // Select all days in between start and end.
         //start = selectedCells.get(0).getDate();
         //end = selectedCells.get(1).getDate();
-        selectedCells.get(0).setRangeState(MonthCellDescriptor.RangeState.FIRST);
-        selectedCells.get(1).setRangeState(MonthCellDescriptor.RangeState.LAST);
+        if(rangechange == true){
+          selectedCells.get(0).setSelected(false);
+          selectedCells.get(1).setSelected(false);
+          selectedCells.get(1).setRangeState(MonthCellDescriptor.RangeState.FIRST);
+          selectedCells.get(0).setRangeState(MonthCellDescriptor.RangeState.LAST);}
+
+        else if(oneday == true){
+          selectedCells.get(0).setSelected(false);
+          selectedCells.get(1).setSelected(false);
+          selectedCells.get(1).setRangeState(MonthCellDescriptor.RangeState.SAME);
+          selectedCells.get(0).setRangeState(MonthCellDescriptor.RangeState.SAME);
+        }
+
+        else{
+          selectedCells.get(0).setSelected(false);
+          selectedCells.get(1).setSelected(false);
+          selectedCells.get(0).setRangeState(MonthCellDescriptor.RangeState.FIRST);
+          selectedCells.get(1).setRangeState(MonthCellDescriptor.RangeState.LAST);
+        }
+
 
         for (List<List<MonthCellDescriptor>> month : cells) {
           for (List<MonthCellDescriptor> week : month) {
